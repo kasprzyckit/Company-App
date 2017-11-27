@@ -1,6 +1,8 @@
 package task1;
 
+import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Collections;
 
 import static java.lang.System.*;
 
@@ -8,10 +10,11 @@ public class PersonDemo {
     public static void main(String[] args)
     {
         try {
-            Person person = new Person("John", "Smith", "smith.john@gmail.com");
-            out.println(person);
             PersonFactory factory = new PersonFactory();
-            ListIterator<Person> it = factory.createRandomPersonList(30).listIterator();
+            LinkedList<Person> randomPeople = factory.createRandomPersonList(30);
+            Collections.sort(randomPeople, (p1, p2) -> p1.compareTo(p2));
+
+            ListIterator<Person> it = randomPeople.listIterator();
             while (it.hasNext()) out.println(it.next());
         }
         catch (Exception e) {
@@ -19,3 +22,4 @@ public class PersonDemo {
         }
     }
 }
+
