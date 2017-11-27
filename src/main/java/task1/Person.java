@@ -1,9 +1,9 @@
 package task1;
 
 public class Person {
-    String name;
-    String surname;
-    String email;
+    private final String name;
+    private final String surname;
+    private final String email;
 
     public Person(String name, String surname, String email) throws IllegalArgumentException
     {
