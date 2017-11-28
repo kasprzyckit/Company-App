@@ -56,10 +56,10 @@ public class PersonFactory {
 
         int emailFormat = firstName.hashCode()*29 + lastName.hashCode()*13;
         switch (Math.abs(emailFormat)%4){
-            case 0: return firstName.toLowerCase() + lastName.toLowerCase() + emails[(firstName.length()*lastName.length())%4];
-            case 1: return lastName.toLowerCase() + "." + firstName.toLowerCase() + emails[(firstName.length()*lastName.length())%4];
-            case 2: return firstName.substring(0,1).toLowerCase() + lastName.toLowerCase() + emails[(firstName.length()*lastName.length())%4];
-            case 3: return lastName.toLowerCase() + Integer.toString((emailFormat)%100+100) + emails[(firstName.length()*lastName.length())%4];
+            case 0: return firstName.toLowerCase() + lastName.toLowerCase() + emails[(firstName.length()+lastName.length())%4];
+            case 1: return lastName.toLowerCase() + "." + firstName.toLowerCase() + emails[(firstName.length()+lastName.length())%4];
+            case 2: return firstName.substring(0,1).toLowerCase() + lastName.toLowerCase() + emails[(firstName.length()+lastName.length())%4];
+            case 3: return lastName.toLowerCase() + Integer.toString((emailFormat)%100+100) + emails[(firstName.length()+lastName.length())%4];
         }
         return null;
     }
