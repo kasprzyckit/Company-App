@@ -5,6 +5,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PersonTest {
+    @Test(expected = IllegalArgumentException.class)
+    public void wrongConstructorTest()
+    {
+        Person person = new Person("22", "45", "t");
+    }
+
     @Test
     public void toStringTest()
     {

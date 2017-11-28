@@ -12,7 +12,7 @@ public class PersonDemo {
         try {
             PersonFactory factory = new PersonFactory();
             LinkedList<Person> randomPeople = factory.createRandomPersonList(30);
-            Collections.sort(randomPeople, (p1, p2) -> p1.compareTo(p2));
+            randomPeople.sort((p1, p2) -> p1.compareTo(p2));
 
             ListIterator<Person> it = randomPeople.listIterator();
             while (it.hasNext()) out.println(it.next());
