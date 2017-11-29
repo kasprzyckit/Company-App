@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class PersonFactory {
+    private Random random = new Random();
     private List<String> firstNames = new LinkedList<>();
     private List<String> lastNames = new LinkedList<>();
     private String[] emails = {"@gmail.com", "@yahoo.com", "@company.fr", "@usembassy.eu"};
@@ -38,7 +39,6 @@ public class PersonFactory {
     }
     public Person createRandomPerson()
     {
-        Random random = new Random();
         String firstName = firstNames.get(random.nextInt(firstNames.size()));
         String lasttName = lastNames.get(random.nextInt(lastNames.size()));
         return new Person(firstName, lasttName, generateEmail(firstName, lasttName));
