@@ -1,19 +1,13 @@
 public abstract class AbstractEmployee implements Employee{
-    String name;
-    String role;
-    private Manager superior = null;
-
+    private String name;
+    private String role;
+    private Manager superior;
     public AbstractEmployee(String name, String role)
     {
-        if (name.matches("\\w[\\w ]+")) this.name = name;
+        if (name.matches("\\w[\\w -]+")) this.name = name;
         else throw new IllegalArgumentException("Invalid name:" + name);
-        if (role.matches("\\w[\\w ]+")) this.role = role;
+        if (role.matches("\\w[\\w -]+")) this.role = role;
         else throw new IllegalArgumentException("Invalid role:" + role);
-    }
-    public AbstractEmployee(String name, String role, Manager superior)
-    {
-        this(name, role);
-        this.superior = superior;
     }
 
     @Override
@@ -30,12 +24,17 @@ public abstract class AbstractEmployee implements Employee{
         if (role.matches("\\w[\\w ]+")) this.role = role;
         else throw new IllegalArgumentException("Invalid role:" + role);
     }
-
-    public Manager getSuperior() {
+    public void setSuperior(Manager superior)
+    {
+        this.superior = superior;
+    }
+    public Manager getSuperior()
+    {
         return superior;
     }
 
-    public void setSuperior(Manager superior) {
-        this.superior = superior;
+    public String toString()
+    {
+        return name + " (" + role + ")";
     }
 }

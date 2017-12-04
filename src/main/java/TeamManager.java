@@ -44,4 +44,5 @@ public class TeamManager extends AbstractEmployee implements Manager{
         for (Employee employee : employeeList) report = report.concatenate(employee.reportWork());
         return report;
     }
+    public List<Employee> getEmployees(){return employeeList;}
 }
