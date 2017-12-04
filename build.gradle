@@ -18,14 +18,14 @@ jar {
     manifest {
         attributes(
                 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'task1.PersonDemo'
+                'Main-Class': 'CompanySystem'
         )
     }
 }
 
 task fatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'task1.PersonDemo'
+        attributes 'Main-Class': 'ComapnySystem'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
