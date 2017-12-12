@@ -2,11 +2,11 @@ public abstract class AbstractEmployee implements Employee{
     private String name;
     private String role;
     private Manager superior;
-    public AbstractEmployee(String name, String role)
+    public AbstractEmployee(String name, String role) throws IllegalArgumentException
     {
-        if (name.matches("\\w[\\w -]+")) this.name = name;
+        if (name.matches("[A-Z][a-zA-Z -]+")) this.name = name;
         else throw new IllegalArgumentException("Invalid name:" + name);
-        if (role.matches("\\w[\\w -]+")) this.role = role;
+        if (role.matches("[A-Z][a-zA-Z -]+")) this.role = role;
         else throw new IllegalArgumentException("Invalid role:" + role);
     }
 

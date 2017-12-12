@@ -3,10 +3,10 @@ public class Task {
     private Integer unitsOfWork;
     private Employee performer;
 
-    public Task(String name, int ufw) {
-        if (name.matches("\\w[\\w ]+\\w"))this.taskName = name;
+    public Task(String name, int unitsOfWork) throws IllegalArgumentException {
+        if (name.matches("[A-Z][A-Za-z ]+\\w"))this.taskName = name;
         else throw new IllegalArgumentException("Invalid task name.");
-        if (ufw >= 0) this.unitsOfWork = ufw;
+        if (unitsOfWork >= 0) this.unitsOfWork = unitsOfWork;
         else throw new IllegalArgumentException("Invalid amount of units of work.");
     }
 

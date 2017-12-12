@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class Developer extends AbstractEmployee {
     private List<Task> tasks = new LinkedList<>();
-    public Developer(String name, String role)
+    public Developer(String name, String role) throws IllegalArgumentException
     {
         super(name, role);
     }
