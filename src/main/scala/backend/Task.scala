@@ -1,3 +1,5 @@
+package backend
+
 class Task (val name: String, val units: UnitsOfWork, val employee: Employee){
 
   def this(name: String, units: UnitsOfWork) = this(name, units, null)

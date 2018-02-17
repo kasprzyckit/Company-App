@@ -1,4 +1,6 @@
-import Gender.Gender
+package backend
+
+import backend.Gender.Gender
 
 trait Employee{
   val firstName: String

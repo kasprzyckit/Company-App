@@ -1,3 +1,5 @@
+package backend
+
 class Report (val tasks: List[Task]) {
 
   def addTaskAll (otherTasks: List[Task]): Report =

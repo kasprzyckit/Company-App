@@ -1,4 +1,7 @@
-import Gender.Gender
+package backend
+
+import backend.Gender.Gender
+
 import scala.util.Random
 
 class TeamManager(firstName: String,

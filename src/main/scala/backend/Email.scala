@@ -1,3 +1,5 @@
+package backend
+
 class Email (email:String)
 {
   private var login_ : String = _

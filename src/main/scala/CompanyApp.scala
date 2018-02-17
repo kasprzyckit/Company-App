@@ -1,3 +1,5 @@
+import backend._
+
 class CompanyApp
 
 object CompanyApp {
@@ -6,7 +8,7 @@ object CompanyApp {
     db.setCountry("Spain")
     db.setEmail("john@ham.com")
     db.setGender(Gender.M)
-    db.setRole("PHP Developer")
+    db.setRole("PHP backend.Developer")
     db.setUniversity("AGH")
     val john = db.createDeveloper
 
@@ -15,7 +17,7 @@ object CompanyApp {
     db.setCountry("Mehico")
     db.setEmail("alf@mex.com")
     db.setGender(Gender.M)
-    db.setRole("HTML Developer")
+    db.setRole("HTML backend.Developer")
     db.setUniversity("UJ")
     val alf = db.createDeveloper
 
@@ -24,7 +26,7 @@ object CompanyApp {
     db.setCountry("US of A")
     db.setEmail("bb@gnail.com")
     db.setGender(Gender.M)
-    db.setRole("Logo Developer")
+    db.setRole("Logo backend.Developer")
     db.setUniversity("Harvard")
     db.setHiringLimit(2)
     val bob = db createTeamMenager

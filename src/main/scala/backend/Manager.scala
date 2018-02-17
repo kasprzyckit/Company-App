@@ -1,3 +1,5 @@
+package backend
+
 trait Manager{
   def hire (employee: Employee): Unit
   def fire (employee: Employee): Unit

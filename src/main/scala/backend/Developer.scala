@@ -1,4 +1,6 @@
-import Gender.Gender
+package backend
+
+import backend.Gender.Gender
 
 class Developer(firstName: String,
                 lastName: String,

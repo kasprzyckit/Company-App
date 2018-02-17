@@ -1,3 +1,5 @@
+package backend
+
 class HiringPredicate (private val predicate: Employee => Boolean){
 
   def &&(other: HiringPredicate):HiringPredicate = new HiringPredicate(emp => this (emp) && other (emp))
@@ -10,7 +12,7 @@ class HiringPredicate (private val predicate: Employee => Boolean){
 
 object HiringPredicate {
   implicit def predToFunc(hiringPredicate: HiringPredicate): Employee => Boolean = hiringPredicate.predicate
-  //implicit def funcToPred(predicate: Employee => Boolean): HiringPredicate = new HiringPredicate(predicate)
+  //implicit def funcToPred(predicate: backend.Employee => Boolean): backend.HiringPredicate = new backend.HiringPredicate(predicate)
 
   def create(field: String, value: String, neg: Boolean):HiringPredicate = { val p: Employee => Boolean = field match {
     case "first" => _.firstName.equalsIgnoreCase(value)
