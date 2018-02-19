@@ -1,4 +1,4 @@
-package dataModel
+package data.domain
 
 class Email (email:String)
 {

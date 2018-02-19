@@ -1,4 +1,4 @@
-package dataModel
+package data.domain
 
 class Task (val name: String, val units: UnitsOfWork, val employee: Employee){
 

@@ -1,4 +1,4 @@
-package dataModel
+package data.domain
 
 object Gender extends Enumeration{
   type Gender = Value

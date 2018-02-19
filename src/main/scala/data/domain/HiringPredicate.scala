@@ -1,4 +1,4 @@
-package dataModel
+package data.domain
 
 class HiringPredicate (private val predicate: Employee => Boolean){
 

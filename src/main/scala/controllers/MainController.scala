@@ -19,6 +19,9 @@ object MainController {
 
   val MAINSCENE: String = "fxml/main.fxml"
   val COMPANIESLIST: String = "fxml/companiesList.fxml"
+  val COMPANYVIEW: String = "fxml/companyView.fxml"
+  val EMPLOYEEVIEW: String = "fxml/employeeView.fxml"
+  val HIRINGPREDICATE: String = "fxml/hiringPredicate.fxml"
 
   var mainController: MainController = _
 

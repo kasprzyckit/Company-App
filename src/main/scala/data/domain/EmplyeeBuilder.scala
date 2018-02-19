@@ -1,6 +1,6 @@
-package dataModel
+package data.domain
 
-import dataModel.Gender.Gender
+import data.domain.Gender.Gender
 
 class EmplyeeBuilder(f: String, l: String) {
   private var firstName: String = f

@@ -1,4 +1,4 @@
-package dataModel
+package data.domain
 
 class Report (val tasks: List[Task]) {
 

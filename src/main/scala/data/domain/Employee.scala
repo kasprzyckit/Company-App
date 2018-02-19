@@ -1,6 +1,6 @@
-package dataModel
+package data.domain
 
-import dataModel.Gender.Gender
+import data.domain.Gender.Gender
 
 trait Employee{
   val firstName: String

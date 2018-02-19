@@ -1,4 +1,4 @@
-package dataModel
+package data.domain
 
 trait Manager{
   def hire (employee: Employee): Unit
