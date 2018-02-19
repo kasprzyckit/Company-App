@@ -1,60 +1,69 @@
-import backend._
-
-class CompanyApp
+import javafx.application.Application
+import javafx.event.ActionEvent
+import javafx.scene.Scene
+import javafx.scene.control.Button
+import javafx.scene.layout.VBox
+import javafx.scene.paint.Color
+import javafx.scene.text.{Font, Text}
+import javafx.stage.Stage
 
 object CompanyApp {
   def main(args: Array[String]): Unit = {
-    val db = new EmplyeeBuilder("John", "Smith")
-    db.setCountry("Spain")
-    db.setEmail("john@ham.com")
-    db.setGender(Gender.M)
-    db.setRole("PHP backend.Developer")
-    db.setUniversity("AGH")
-    val john = db.createDeveloper
 
-    db setFirstName "Alf"
-    db setLastName "Bruno"
-    db.setCountry("Mehico")
-    db.setEmail("alf@mex.com")
-    db.setGender(Gender.M)
-    db.setRole("HTML backend.Developer")
-    db.setUniversity("UJ")
-    val alf = db.createDeveloper
+    Application.launch(classOf[CompanyApp], args: _*)
+  }
+}
 
-    db setFirstName "Bob"
-    db setLastName "Casney"
-    db.setCountry("US of A")
-    db.setEmail("bb@gnail.com")
-    db.setGender(Gender.M)
-    db.setRole("Logo backend.Developer")
-    db.setUniversity("Harvard")
-    db.setHiringLimit(2)
-    val bob = db createTeamMenager
+class CompanyApp extends Application
+{
+  override def start(primaryStage: Stage): Unit =
+  {
+    primaryStage.setTitle("Hello World!")
 
-    val ceo = new TeamManager("Albert", "Crus", "CEO","albert.crus@gmail.com", Gender.W, "California", "Univ", 20)
-    val dan = new Developer("Daniel", "Wart", "C++ Dev", "dan@cpp.io", Gender.M, "Arizona", "C High")
+    val root1 = new VBox
+    val root2 = new VBox
 
-    bob.hiringPredicate = HiringPredicate.create("univeristy", "UJ", false) || HiringPredicate.create("first", "john", false)
+    val scene1 = new Scene(root1, 300, 250)
+    val scene2 = new Scene(root2, 200, 300)
 
-    bob hire john
-    bob hire alf
-    ceo hire dan
-    ceo hire bob
+    val text1 = new Text("Test")
+    text1.setFont(new Font(15))
+    text1.setFill(Color.CHOCOLATE)
 
-    bob.assign(new Task("task1", 3))
-    bob.assign(new Task("task2", 9))
-    bob.assign(new Task("task3", 7))
-    bob.assign(new Task("task4", 3))
-    bob.assign(new Task("task5", 4))
-    ceo.assign(new Task("task6", 1))
-    ceo.assign(new Task("task7", 14))
-    ceo.assign(new Task("task8", 5))
-    ceo.assign(new Task("task9", 8))
-    ceo.assign(new Task("task10", 87))
-    ceo.assign(new Task("task11", 44))
-    ceo.assign(new Task("task12", 0))
+    val btn11 = new Button
+    val p = "asdasdsad"
+    btn11.setText(p)
+    btn11.setOnAction((e: ActionEvent) => {
+      text1.setFill(Color.BLUE)
+    })
 
-    for (task <- ceo.reportWork.tasks) println(task)
+    val btn12 = new Button
+    btn12.setText("Change the root node'")
+    btn12.setOnAction((e: ActionEvent) => {
+      primaryStage.setScene(scene2)
+    })
 
+    root1.getChildren.addAll(text1, btn11, btn12)
+
+    val text2 = new Text("Test")
+    text2.setFont(new Font(15))
+    text2.setFill(Color.GOLD)
+
+    val btn21 = new Button
+    btn21.setText("Change the color'")
+    btn21.setOnAction((e: ActionEvent) => {
+      text2.setFill(Color.LAWNGREEN)
+    })
+
+    val btn22 = new Button
+    btn22.setText("Change the root node'")
+    btn22.setOnAction((e: ActionEvent) => {
+      primaryStage.setScene(scene1)
+    })
+
+    root2.getChildren.addAll(text2, btn21, btn22)
+
+    primaryStage.setScene(scene1)
+    primaryStage show
   }
 }

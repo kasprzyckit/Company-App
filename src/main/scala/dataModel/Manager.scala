@@ -1,4 +1,4 @@
-package backend
+package dataModel
 
 trait Manager{
   def hire (employee: Employee): Unit

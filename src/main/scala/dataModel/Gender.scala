@@ -1,4 +1,4 @@
-package backend
+package dataModel
 
 object Gender extends Enumeration{
   type Gender = Value
