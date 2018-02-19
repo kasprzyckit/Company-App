@@ -17,15 +17,15 @@ class MainController {
 
 object MainController {
 
-  val mainScene: String = "fxml/main.fxml"
-  val companiesList: String = "src/main/resources/fxml/companiesList.fxml"
+  val MAINSCENE: String = "fxml/main.fxml"
+  val COMPANIESLIST: String = "fxml/companiesList.fxml"
 
   var mainController: MainController = _
 
   def loadView (view: String): Unit = {
     try {
       mainController.setView(
-        FXMLLoader.load(new File(companiesList).toURI.toURL)
+        FXMLLoader.load(MainController.getClass.getClassLoader.getResource(view))
       )
     } catch {
       case e: Exception => e.printStackTrace()

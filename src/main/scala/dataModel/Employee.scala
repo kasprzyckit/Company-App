@@ -1,5 +1,7 @@
 package dataModel
 
+import dataModel.Gender.Gender
+
 trait Employee{
   val firstName: String
   val lastName: String
