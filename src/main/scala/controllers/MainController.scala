@@ -1,10 +1,11 @@
 package controllers
 
-import java.io.{File, IOException}
-import java.net.URL
 import javafx.fxml.{FXML, FXMLLoader}
 import javafx.scene.Node
 import javafx.scene.layout.StackPane
+import javafx.stage.Stage
+
+import data.{CompaniesListModel, CompanyViewModel}
 
 class MainController {
 
@@ -23,7 +24,12 @@ object MainController {
   val EMPLOYEEVIEW: String = "fxml/employeeView.fxml"
   val HIRINGPREDICATE: String = "fxml/hiringPredicate.fxml"
 
+  val companiesListModel: CompaniesListModel = new CompaniesListModel
+  val companyViewModel: CompanyViewModel = new CompanyViewModel
+
   var mainController: MainController = _
+
+  var primaryStage: Stage = _
 
   def loadView (view: String): Unit = {
     try {
