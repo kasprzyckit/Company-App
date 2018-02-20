@@ -8,8 +8,9 @@ class Developer(firstName: String,
                 email: Email,
                 gender: Gender,
                 country: String,
-                university: String)
-  extends AbstractEmployee(firstName, lastName, role, email, gender, country, university) {
+                university: String,
+                supervisor: Manager)
+  extends AbstractEmployee(firstName, lastName, role, email, gender, country, university, supervisor) {
 
   private var tasks_ : List[Task] = List()
 

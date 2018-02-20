@@ -11,6 +11,7 @@ class EmplyeeBuilder(f: String, l: String) {
   private var country: String = _
   private var university: String = _
   private var hiringLimit: Int = _
+  private var supervisor: Manager = _
 
   def setFirstName(n: String) {firstName = n}
   def setLastName(n: String) {lastName = n}
@@ -20,7 +21,8 @@ class EmplyeeBuilder(f: String, l: String) {
   def setCountry(n: String) {country = n}
   def setUniversity(n: String) {university = n}
   def setHiringLimit(n: Int) {hiringLimit = n}
+  def setSupervisor(n: Manager) {supervisor = n}
 
-  def createDeveloper = new Developer(firstName, lastName, role, email, gender, country, university)
-  def createTeamMenager = new TeamManager(firstName, lastName, role, email, gender, country, university, hiringLimit)
+  def createDeveloper = new Developer(firstName, lastName, role, email, gender, country, university, supervisor)
+  def createTeamMenager = new TeamManager(firstName, lastName, role, email, gender, country, university, supervisor, hiringLimit)
 }

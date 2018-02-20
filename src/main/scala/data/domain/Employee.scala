@@ -10,6 +10,7 @@ trait Employee{
   val gender: Gender
   val country: String
   val university: String
+  val supervisor: Manager
 
   def assign(task: Task): Unit
   def reportWork: Report
