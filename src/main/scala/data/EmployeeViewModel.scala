@@ -27,8 +27,8 @@ class EmployeeViewModel {
   }
 
   def initManagers(): Unit = currentEmployee match {
-    case manager: Manager => managers = (currentEmployee.company.director.allManagers - manager).asJavaCollection
-    case employee: Employee => managers = currentEmployee.company.director.allManagers.asJavaCollection
+    case manager: Manager => managers = (currentEmployee.company.managers - manager).asJavaCollection
+    case employee: Employee => managers = currentEmployee.company.managers.asJavaCollection
   }
 
   def save(firstName: String,

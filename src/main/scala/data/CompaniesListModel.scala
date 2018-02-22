@@ -14,9 +14,6 @@ class CompaniesListModel {
 
   def deleteCompany(): Unit = companiesListData.remove(currentlySelected)
 
-  companiesListData.add(new Company("Test Company", new TeamManager("Harold", "Ockham", "CEO", "aa@wp.pl", Gender.M, "Oc", "UJ", null, null, 6)))
-  companiesListData.add(new Company("Coodod", new TeamManager("All", "Ber", "CEO", "sadsa@wp.pl", Gender.W, "Oc", "UJ", null, null, 6)))
-
   var currentlySelected: Company = _
 
   def numberOfCompanies: Int = companiesListData.size()
