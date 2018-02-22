@@ -14,6 +14,8 @@ class CompanyApp extends Application
 
     primaryStage setScene createScene(loadMainPane)
 
+    MainController.primaryStage = primaryStage
+
     primaryStage.show()
   }
 
@@ -43,5 +45,5 @@ object CompanyApp {
   def main(args: Array[String]): Unit = {
 
     Application.launch(classOf[CompanyApp], args: _*)
-  }
+    }
 }

@@ -15,20 +15,13 @@ class CompaniesListController extends Initializable{
   private val listModel = MainController.companiesListModel
   private val companyModel = MainController.companyViewModel
 
-  @FXML
-  private var companiesList: ListView[Company] = _
-  @FXML
-  private var editButton: Button = _
-  @FXML
-  private var deleteButton: Button = _
-  @FXML
-  private var infoPane: BorderPane = _
-  @FXML
-  private var companyNameLabel: Label = _
-  @FXML
-  private var directorNameLabel: Label = _
-  @FXML
-  private var employeeNumberLabel: Label = _
+  @FXML private var companiesList: ListView[Company] = _
+  @FXML private var editButton: Button = _
+  @FXML private var deleteButton: Button = _
+  @FXML private var infoPane: BorderPane = _
+  @FXML private var companyNameLabel: Label = _
+  @FXML private var directorNameLabel: Label = _
+  @FXML private var employeeNumberLabel: Label = _
 
   override def initialize(url: URL, resourceBundle: ResourceBundle): Unit = {
 
@@ -77,9 +70,14 @@ class CompaniesListController extends Initializable{
   }
 
   @FXML
-  private def editAction(event: ActionEvent): Unit = ???
+  private def editAction(event: ActionEvent): Unit = {
+    companyModel.editCompany(listModel.currentlySelected)
+    MainController.loadView(MainController.COMPANYVIEW)
+  }
 
   @FXML
-  private def deleteAction(event: ActionEvent): Unit = ???
+  private def deleteAction(event: ActionEvent): Unit = {
+    listModel.deleteCompany()
+  }
 
 }

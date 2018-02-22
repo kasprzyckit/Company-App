@@ -5,7 +5,7 @@ import javafx.scene.Node
 import javafx.scene.layout.StackPane
 import javafx.stage.Stage
 
-import data.{CompaniesListModel, CompanyViewModel}
+import data.{CompaniesListModel, CompanyViewModel, EmployeeViewModel}
 
 class MainController {
 
@@ -26,6 +26,7 @@ object MainController {
 
   val companiesListModel: CompaniesListModel = new CompaniesListModel
   val companyViewModel: CompanyViewModel = new CompanyViewModel
+  val employeeViewModel: EmployeeViewModel = new EmployeeViewModel
 
   var mainController: MainController = _
 
