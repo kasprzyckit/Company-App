@@ -1,5 +1,5 @@
 package data.domain
 
-class Company (val name: String, val director: TeamManager) {
+class Company (var name: String, var director: Manager) {
   override def toString: String = name
 }

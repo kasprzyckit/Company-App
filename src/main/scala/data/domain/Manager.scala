@@ -1,10 +1,13 @@
 package data.domain
 
-trait Manager{
+trait Manager extends Employee{
   def hire (employee: Employee): Unit
   def fire (employee: Employee): Unit
   def canHire: Boolean
-  def employees: Set[Employee]
+  var employees: Set[Employee]
   def totalNumberOfEmployees: Int
+  def allEmployees: Set[Employee]
+  def allManagers: Set[Manager]
   var hiringPredicate: Employee => Boolean
+  var hiringLimit: Int
 }

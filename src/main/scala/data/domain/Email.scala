@@ -1,13 +1,15 @@
 package data.domain
 
+@throws(classOf[IllegalArgumentException])
 class Email (email:String)
 {
   private var login_ : String = _
   private var domain_ : String = _
 
     email match {
+      case "" =>
     case Email(log, dom) => login_ = log; domain_ = dom;
-    case _ => println("Error")  //TODO
+    case _ => throw new IllegalArgumentException
   }
 
   def login: String = login_

@@ -23,6 +23,6 @@ class EmplyeeBuilder(f: String, l: String) {
   def setHiringLimit(n: Int) {hiringLimit = n}
   def setSupervisor(n: Manager) {supervisor = n}
 
-  def createDeveloper = new Developer(firstName, lastName, role, email, gender, country, university, supervisor)
-  def createTeamMenager = new TeamManager(firstName, lastName, role, email, gender, country, university, supervisor, hiringLimit)
+  def createDeveloper = new Developer(firstName, lastName, role, email, gender, country, university, supervisor, null)
+  def createTeamMenager = new TeamManager(firstName, lastName, role, email, gender, country, university, supervisor, null, hiringLimit)
 }
